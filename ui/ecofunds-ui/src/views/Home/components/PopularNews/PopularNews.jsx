@@ -7,7 +7,7 @@ import Typography from '@mui/material/Typography';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Chip from '@mui/material/Chip';
-import FirstImage from './svg/3.png';
+import FirstImage from './svg/3.jpg';
 import SecondImage from './svg/1.png';
 
 const mock = [

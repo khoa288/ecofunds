@@ -5,7 +5,11 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
-
+import image1 from './svg/1.jpg';
+import image2 from './svg/2.jpg';
+import image3 from './svg/3.jpg';
+import image4 from './svg/4.jpg';
+import image5 from './svg/5.jpg';
 const PageReferences = () => {
   const theme = useTheme();
 
@@ -15,32 +19,27 @@ const PageReferences = () => {
 
   const photos = [
     {
-      src: 'https://assets.maccarianagency.com/backgrounds/img23.jpg',
-      source: 'https://assets.maccarianagency.com/backgrounds/img23.jpg',
+      src: image4,
       rows: 2,
       cols: 1,
     },
     {
-      src: 'https://assets.maccarianagency.com/backgrounds/img25.jpg',
-      source: 'https://assets.maccarianagency.com/backgrounds/img25.jpg',
+      src: image3,
       rows: 1,
       cols: 2,
     },
     {
-      src: 'https://assets.maccarianagency.com/backgrounds/img22.jpg',
-      source: 'https://assets.maccarianagency.com/backgrounds/img22.jpg',
+      src: image2,
       rows: 1,
       cols: 1,
     },
     {
-      src: 'https://assets.maccarianagency.com/backgrounds/img24.jpg',
-      source: 'https://assets.maccarianagency.com/backgrounds/img24.jpg',
+      src: image1,
       rows: 1,
       cols: 1,
     },
     {
-      src: 'https://assets.maccarianagency.com/backgrounds/img21.jpg',
-      source: 'https://assets.maccarianagency.com/backgrounds/img21.jpg',
+      src: image5,
       rows: 1,
       cols: 2,
     },
@@ -60,7 +59,7 @@ const PageReferences = () => {
           color={'text.secondary'}
           align={'center'}
         >
-          Gallery
+          Impact
         </Typography>
         <Typography
           variant="h4"
@@ -71,11 +70,11 @@ const PageReferences = () => {
             marginTop: theme.spacing(1),
           }}
         >
-          By You Its Happened
+          By You
         </Typography>
         <Typography variant="h6" align={'center'} color={'text.secondary'}>
-          With your donation, we have made enormous impact to those unfortunate
-          lifes.
+          With your donation, it could help impact millions of lives that are
+          struggling with light.
         </Typography>
       </Box>
       <Box>
