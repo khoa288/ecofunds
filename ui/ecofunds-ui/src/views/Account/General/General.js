@@ -7,44 +7,75 @@ import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import Link from '@mui/material/Link';
-
 import Page from '../components/Page';
 import Main from 'layouts/Main';
+import { useTheme } from '@mui/material/styles';
+import { Avatar, Card } from '@mui/material';
+
+const mock = [
+  {
+    number: '1000+',
+    title: 'SOL',
+    subtitle: 'Donations Amount for the Campaign',
+    icon: (
+      <svg
+        height={24}
+        width={24}
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"
+        />
+      </svg>
+    ),
+  },
+  {
+    number: '2+',
+    title: 'Solar Panels',
+    subtitle: 'Amount of Solar Panels have been installed',
+    icon: (
+      <svg
+        height={24}
+        width={24}
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+        />
+      </svg>
+    ),
+  },
+];
 
 const validationSchema = yup.object({
-  fullName: yup
+  Wallet: yup
     .string()
     .trim()
-    .min(2, 'Please enter a valid name')
-    .max(50, 'Please enter a valid name')
-    .required('Please specify your first name'),
+    .min(2, 'Please enter a valid Wallet')
+    .max(50, 'Please enter a valid Wallet')
+    .required('Please specify your Wallet'),
   email: yup
     .string()
     .trim()
     .email('Please enter a valid email address')
     .required('Email is required.'),
-  bio: yup
-    .string()
-    .trim()
-    .max(500, 'Should be less than 500 chars'),
-  country: yup
-    .string()
-    .trim()
-    .min(2, 'Please enter a valid name')
-    .max(80, 'Please enter a valid name')
-    .required('Please specify your country name'),
-  city: yup
-    .string()
-    .trim()
-    .min(2, 'Please enter a valid name')
-    .max(80, 'Please enter a valid name')
-    .required('Please specify your city name'),
-  address: yup
-    .string()
-    .required('Please specify your address')
-    .min(2, 'Please enter a valid address')
-    .max(200, 'Please enter a valid address'),
+  walletaddress: yup.string().trim().max(500, 'Should be less than 500 chars'),
+  phonenumber: yup
+    .number()
+    .min(2, 'Please enter a valid phone number')
+    .max(200, 'Please enter a valid phone number'),
 });
 
 const General = () => {
@@ -66,21 +97,63 @@ const General = () => {
     validationSchema: validationSchema,
     onSubmit,
   });
+  const theme = useTheme();
 
   return (
     <Main>
       <Page>
         <Box>
-          <Typography variant="h6" gutterBottom fontWeight={700}>
-            Change your private information
-          </Typography>
-          <Typography variant={'subtitle2'} color={'text.secondary'}>
-            Please read our{' '}
-            <Link color={'primary'} href={'/company-terms'} underline={'none'}>
-              terms of use
-            </Link>{' '}
-            to be informed how we manage your private data.
-          </Typography>
+          <Grid container spacing={4}>
+            {mock.map((item, i) => (
+              <Grid item xs={12} sm={6} md={6} key={i}>
+                <Box
+                  component={Card}
+                  padding={4}
+                  borderRadius={2}
+                  width={1}
+                  height={1}
+                  data-aos={'fade-up'}
+                  data-aos-delay={i * 100}
+                  data-aos-offset={100}
+                  data-aos-duration={600}
+                  variant={'outlined'}
+                >
+                  <Box display={'flex'} flexDirection={'column'}>
+                    <Box
+                      component={Avatar}
+                      width={50}
+                      height={50}
+                      marginBottom={2}
+                      bgcolor={theme.palette.primary.main}
+                      color={theme.palette.background.paper}
+                    >
+                      {item.icon}
+                    </Box>
+                    <Typography
+                      variant={'h4'}
+                      color={'primary'}
+                      gutterBottom
+                      sx={{ fontWeight: 700 }}
+                    >
+                      {item.number}
+                    </Typography>
+                    <Typography
+                      variant={'h6'}
+                      gutterBottom
+                      sx={{ fontWeight: 500 }}
+                    >
+                      {item.title}
+                    </Typography>
+                    <Typography color="text.secondary">
+                      {item.subtitle}
+                    </Typography>
+                  </Box>
+                </Box>
+              </Grid>
+            ))}
+          </Grid>
+        </Box>
+        <Box>
           <Box paddingY={4}>
             <Divider />
           </Box>
@@ -92,19 +165,19 @@ const General = () => {
                   sx={{ marginBottom: 2 }}
                   fontWeight={700}
                 >
-                  Enter your first name
+                  Wallet name
                 </Typography>
                 <TextField
-                  label="First name *"
+                  label="Wallet *"
                   variant="outlined"
                   name={'fullName'}
                   fullWidth
-                  value={formik.values.fullName}
+                  value={formik.values.Wallet}
                   onChange={formik.handleChange}
                   error={
-                    formik.touched.fullName && Boolean(formik.errors.fullName)
+                    formik.touched.fullName && Boolean(formik.errors.Wallet)
                   }
-                  helperText={formik.touched.fullName && formik.errors.fullName}
+                  helperText={formik.touched.fullName && formik.errors.Wallet}
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
@@ -113,7 +186,7 @@ const General = () => {
                   sx={{ marginBottom: 2 }}
                   fontWeight={700}
                 >
-                  Enter your email
+                  Email
                 </Typography>
                 <TextField
                   label="Email *"
@@ -132,83 +205,45 @@ const General = () => {
                   sx={{ marginBottom: 2 }}
                   fontWeight={700}
                 >
-                  Bio
+                  Wallet Address
                 </Typography>
                 <TextField
-                  label="Bio"
+                  label="Wallet Address"
                   variant="outlined"
-                  name={'bio'}
-                  multiline
-                  rows={5}
+                  name={'wallet address'}
                   fullWidth
-                  value={formik.values.bio}
+                  value={formik.values.walletaddress}
                   onChange={formik.handleChange}
-                  error={formik.touched.bio && Boolean(formik.errors.bio)}
-                  helperText={formik.touched.bio && formik.errors.bio}
+                  error={
+                    formik.touched.bio && Boolean(formik.errors.walletaddress)
+                  }
+                  helperText={formik.touched.bio && formik.errors.walleraddress}
                 />
               </Grid>
               <Grid item xs={12}>
                 <Divider />
               </Grid>
-              <Grid item xs={12} sm={6}>
-                <Typography
-                  variant={'subtitle2'}
-                  sx={{ marginBottom: 2 }}
-                  fontWeight={700}
-                >
-                  Country
-                </Typography>
-                <TextField
-                  label="Country *"
-                  variant="outlined"
-                  name={'country'}
-                  fullWidth
-                  value={formik.values.country}
-                  onChange={formik.handleChange}
-                  error={
-                    formik.touched.country && Boolean(formik.errors.country)
-                  }
-                  helperText={formik.touched.country && formik.errors.country}
-                />
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <Typography
-                  variant={'subtitle2'}
-                  sx={{ marginBottom: 2 }}
-                  fontWeight={700}
-                >
-                  City
-                </Typography>
-                <TextField
-                  label="City *"
-                  variant="outlined"
-                  name={'city'}
-                  fullWidth
-                  value={formik.values.city}
-                  onChange={formik.handleChange}
-                  error={formik.touched.city && Boolean(formik.errors.city)}
-                  helperText={formik.touched.city && formik.errors.city}
-                />
-              </Grid>
               <Grid item xs={12}>
                 <Typography
                   variant={'subtitle2'}
                   sx={{ marginBottom: 2 }}
                   fontWeight={700}
                 >
-                  Enter your address
+                  Phone Number
                 </Typography>
                 <TextField
-                  label="Address *"
+                  label="Phone number *"
                   variant="outlined"
                   name={'address'}
                   fullWidth
-                  value={formik.values.address}
+                  value={formik.values.phonenumber}
                   onChange={formik.handleChange}
                   error={
-                    formik.touched.address && Boolean(formik.errors.address)
+                    formik.touched.address && Boolean(formik.errors.phonenumber)
                   }
-                  helperText={formik.touched.address && formik.errors.address}
+                  helperText={
+                    formik.touched.address && formik.errors.phonenumber
+                  }
                 />
               </Grid>
               <Grid item container xs={12}>
@@ -220,18 +255,6 @@ const General = () => {
                   width={1}
                   margin={'0 auto'}
                 >
-                  <Box marginBottom={{ xs: 1, sm: 0 }}>
-                    <Typography variant={'subtitle2'}>
-                      You may also consider to update your{' '}
-                      <Link
-                        color={'primary'}
-                        href={'/account-billing'}
-                        underline={'none'}
-                      >
-                        billing information.
-                      </Link>
-                    </Typography>
-                  </Box>
                   <Button size={'large'} variant={'contained'} type={'submit'}>
                     Save
                   </Button>
