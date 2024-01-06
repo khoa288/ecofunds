@@ -2,11 +2,8 @@ import React, { useEffect } from 'react';
 import { alpha } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import ListItemText from '@mui/material/ListItemText';
-import Avatar from '@mui/material/Avatar';
-
 import Container from 'components/Container';
-
+import Hi from './svg/1.jpg';
 const Hero = () => {
   useEffect(() => {
     const jarallaxInit = async () => {
@@ -50,9 +47,9 @@ const Hero = () => {
           backgroundRepeat: 'no-repeat',
           backgroundSize: 'cover',
           backgroundPosition: 'center center',
-          backgroundImage:
-            'url(https://assets.maccarianagency.com/backgrounds/img3.jpg)',
+          backgroundImage: `url(Hi)`,
         }}
+        src={Hi}
       />
       <Box
         sx={{
@@ -77,26 +74,8 @@ const Hero = () => {
               marginBottom: 2,
             }}
           >
-            Remote work is the future, but should you go remote?
+            Title
           </Typography>
-          <Box display={'flex'} alignItems={'center'}>
-            <Avatar
-              sx={{ width: 60, height: 60, marginRight: 2 }}
-              src={'https://assets.maccarianagency.com/avatars/img3.jpg'}
-            />
-            <ListItemText
-              sx={{ margin: 0 }}
-              primary={'Jhon Anderson'}
-              secondary={'May 19, 2021'}
-              primaryTypographyProps={{
-                variant: 'h6',
-                sx: { color: 'common.white' },
-              }}
-              secondaryTypographyProps={{
-                sx: { color: alpha('#ffffff', 0.8) },
-              }}
-            />
-          </Box>
         </Box>
       </Container>
     </Box>

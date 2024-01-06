@@ -4,7 +4,7 @@ import Box from '@mui/material/Box';
 
 import Main from 'layouts/Main';
 import Container from 'components/Container';
-import { PageReferences, Hero } from './components';
+import { PageReferences, Hero, PopularNews } from './components';
 
 const Home = () => {
   const theme = useTheme();
@@ -33,6 +33,9 @@ const Home = () => {
         <Box position={'relative'} zIndex={2}>
           <Hero />
         </Box>
+      </Container>
+      <Container>
+        <PopularNews />
       </Container>
       <Box
         position={'relative'}
