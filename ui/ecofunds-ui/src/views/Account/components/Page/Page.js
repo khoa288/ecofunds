@@ -16,21 +16,6 @@ const pages = [
     href: '/account-general',
     title: 'General',
   },
-  {
-    id: 'security',
-    href: '/account-security',
-    title: 'Security',
-  },
-  {
-    id: 'notifications',
-    href: '/account-notifications',
-    title: 'Notifications',
-  },
-  {
-    id: 'billing',
-    href: '/account-billing',
-    title: 'Billing Information',
-  },
 ];
 
 const Page = ({ children }) => {
@@ -51,10 +36,7 @@ const Page = ({ children }) => {
             gutterBottom
             sx={{ color: 'common.white' }}
           >
-            Account settings
-          </Typography>
-          <Typography variant="h6" sx={{ color: 'common.white' }}>
-            Change account information and settings
+            Profile
           </Typography>
         </Container>
       </Box>

@@ -4,10 +4,7 @@ import {
   Home as HomeView,
   Campaign as CampaignView,
   Article as ArticleView,
-  AccountBilling as AccountBillingView,
   AccountGeneral as AccountGeneralView,
-  AccountNotifications as AccountNotificationsView,
-  AccountSecurity as AccountSecurityView,
 } from 'views';
 
 const routes = [
@@ -23,21 +20,10 @@ const routes = [
     path: '/AboutCampaign',
     renderer: (params = {}) => <ArticleView {...params} />,
   },
+
   {
-    path: '/account-billing',
-    renderer: (params = {}) => <AccountBillingView {...params} />,
-  },
-  {
-    path: '/account-general',
+    path: '/account',
     renderer: (params = {}) => <AccountGeneralView {...params} />,
-  },
-  {
-    path: '/account-notifications',
-    renderer: (params = {}) => <AccountNotificationsView {...params} />,
-  },
-  {
-    path: '/account-security',
-    renderer: (params = {}) => <AccountSecurityView {...params} />,
   },
 ];
 

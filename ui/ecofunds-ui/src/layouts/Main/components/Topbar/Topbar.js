@@ -48,6 +48,17 @@ const Topbar = ({ onSidebarOpen, colorInvert = false }) => {
           </Link>
         </Box>
         <Box marginLeft={4}>
+          <Link
+            underline="none"
+            component="a"
+            href="/account"
+            color={colorInvert ? 'common.white' : 'text.primary'}
+            sx={{ display: 'flex', alignItems: 'center' }}
+          >
+            Account
+          </Link>
+        </Box>
+        <Box marginLeft={4}>
           <Button
             variant="contained"
             color="primary"
