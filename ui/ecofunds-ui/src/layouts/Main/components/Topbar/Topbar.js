@@ -64,7 +64,7 @@ const Topbar = ({ onSidebarOpen, colorInvert = false }) => {
             color="primary"
             component="a"
             target="blank"
-            href="/"
+            href="/LogIn"
             size="large"
           >
             Log In
@@ -76,6 +76,7 @@ const Topbar = ({ onSidebarOpen, colorInvert = false }) => {
           onClick={() => onSidebarOpen()}
           aria-label="Menu"
           variant={'outlined'}
+          href="/LogIn"
           sx={{
             borderRadius: 2,
             minWidth: 'auto',
