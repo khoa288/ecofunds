@@ -1,5 +1,8 @@
 /* eslint-disable react/no-unescaped-entities */
-import React from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import { saveWalletAddress } from 'utilities/localStorage';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import Grid from '@mui/material/Grid';
@@ -11,6 +14,30 @@ import Link from '@mui/material/Link';
 import Container from 'components/Container';
 
 const LogIn = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const navigate = useNavigate();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await axios.post('http://localhost:3005/auth/register', {
+        email,
+        password,
+      });
+
+      if (response.data.success) {
+        saveWalletAddress(response.data.result.walletAddress);
+        navigate('/', { replace: true });
+      } else {
+        console.log('Error:', response.data.message);
+      }
+    } catch (error) {
+      console.error('Error:', error.response?.data?.message || error.message);
+    }
+  };
+
   return (
     <Box bgcolor={'alternate.main'}>
       <Container maxWidth={800}>
@@ -46,6 +73,7 @@ const LogIn = () => {
                   variant="outlined"
                   name={'email'}
                   fullWidth
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -79,6 +107,7 @@ const LogIn = () => {
                   name={'password'}
                   type={'password'}
                   fullWidth
+                  onChange={(e) => setPassword(e.target.value)}
                 />
               </Grid>
               <Grid item container xs={12}>
@@ -87,9 +116,9 @@ const LogIn = () => {
                   variant={'contained'}
                   type={'submit'}
                   fullWidth
-                  href="/Campaign"
+                  onClick={handleSubmit}
                 >
-                  Login
+                  Login / Register
                 </Button>
               </Grid>
             </Grid>

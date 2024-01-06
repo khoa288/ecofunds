@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
 import Box from '@mui/material/Box';
@@ -11,6 +11,7 @@ import Page from '../components/Page';
 import Main from 'layouts/Main';
 import { useTheme } from '@mui/material/styles';
 import { Avatar, Card } from '@mui/material';
+import { getWalletAddress } from 'utilities/localStorage';
 
 const mock = [
   {
@@ -79,6 +80,15 @@ const validationSchema = yup.object({
 });
 
 const General = () => {
+  const [walletAddress, setWalletAddress] = useState(null);
+
+  useEffect(() => {
+    const addr = getWalletAddress();
+    if (addr) {
+      setWalletAddress(addr);
+    }
+  }, []);
+
   const initialValues = {
     fullName: '',
     bio: '',
@@ -208,7 +218,11 @@ const General = () => {
                   Wallet Address
                 </Typography>
                 <TextField
-                  label="Wallet Address"
+                  label={
+                    walletAddress
+                      ? walletAddress
+                      : 'Please connect your wallet first'
+                  }
                   variant="outlined"
                   name={'wallet address'}
                   fullWidth
