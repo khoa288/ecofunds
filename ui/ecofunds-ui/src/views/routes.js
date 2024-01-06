@@ -5,6 +5,7 @@ import {
   Campaign as CampaignView,
   Article as ArticleView,
   AccountGeneral as AccountGeneralView,
+  LogIn as LogInView,
 } from 'views';
 
 const routes = [
@@ -24,6 +25,10 @@ const routes = [
   {
     path: '/account',
     renderer: (params = {}) => <AccountGeneralView {...params} />,
+  },
+  {
+    path: '/LogIn',
+    renderer: (params = {}) => <LogInView {...params} />,
   },
 ];
 
