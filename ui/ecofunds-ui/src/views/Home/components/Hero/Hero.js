@@ -1,12 +1,11 @@
 import React from 'react';
-import Slider from 'react-slick';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { alpha, useTheme } from '@mui/material/styles';
-
+import Cover from './svg/2.png';
 import Container from 'components/Container';
 
 const Hero = () => {
@@ -71,15 +70,6 @@ const Hero = () => {
   );
 
   const RightSide = () => {
-    const sliderOpts = {
-      dots: false,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      arrows: true,
-    };
-
     return (
       <Box
         sx={{
@@ -110,25 +100,14 @@ const Hero = () => {
           },
         }}
       >
-        <Slider {...sliderOpts}>
-          {[
-            'https://assets.maccarianagency.com/backgrounds/img1.jpg',
-            'https://assets.maccarianagency.com/backgrounds/img3.jpg',
-            'https://assets.maccarianagency.com/backgrounds/img24.jpg',
-            'https://assets.maccarianagency.com/backgrounds/img25.jpg',
-          ].map((item) => (
-            <Box
-              key={item}
-              component={'img'}
-              loading="lazy"
-              src={item}
-              height={{ xs: 'auto', md: 1 }}
-              maxHeight={{ xs: 300, md: 1 }}
-              width={1}
-              maxWidth={1}
-            />
-          ))}
-        </Slider>
+        <Box
+          component={'img'}
+          src={Cover}
+          height={{ xs: 'auto', md: 'auto' }}
+          maxHeight={{ xs: 'auto', md: 1 }}
+          width={1}
+          maxWidth={1}
+        />
       </Box>
     );
   };
@@ -162,7 +141,7 @@ const Hero = () => {
             sx={{
               flex: { xs: '0 0 100%', md: '0 0 50%' },
               position: 'relative',
-              maxWidth: { xs: '100%', md: '50%' },
+              maxWidth: { xs: '100%', md: '100%' },
               order: { xs: 1, md: 2 },
             }}
           >

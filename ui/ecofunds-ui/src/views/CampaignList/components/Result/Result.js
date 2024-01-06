@@ -9,70 +9,21 @@ import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
-import Avatar from '@mui/material/Avatar';
 import InputAdornment from '@mui/material/InputAdornment';
-
+import Pic1 from './svg/pic1.jpg';
+import Pic2 from './svg/pic2.jpg';
 const mock = [
   {
-    image: 'https://assets.maccarianagency.com/backgrounds/img2.jpg',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-    title: 'Lorem ipsum dolor sit amet,',
-    author: {
-      name: 'Clara Bertoletti',
-      avatar: 'https://assets.maccarianagency.com/avatars/img4.jpg',
-    },
+    image: Pic1,
+    description: 'Campaign Description',
+    title: 'Campaign Title',
     date: '04 Aug',
   },
   {
-    image: 'https://assets.maccarianagency.com/backgrounds/img3.jpg',
-    description: 'Excepteur sint occaecat cupidatat non proident',
-    title: 'Consectetur adipiscing elit',
-    author: {
-      name: 'Jhon Anderson',
-      avatar: 'https://assets.maccarianagency.com/avatars/img5.jpg',
-    },
+    image: Pic2,
+    description: 'Campaign Description',
+    title: 'Campaign Title',
     date: '12 Sep',
-  },
-  {
-    image: 'https://assets.maccarianagency.com/backgrounds/img4.jpg',
-    description: 'Eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
-    title: 'Labore et dolore magna aliqua',
-    author: {
-      name: 'Chary Smith',
-      avatar: 'https://assets.maccarianagency.com/avatars/img6.jpg',
-    },
-    date: '22 Nov',
-  },
-  {
-    image: 'https://assets.maccarianagency.com/backgrounds/img23.jpg',
-    description:
-      'Sed ut perspiciatis unde omnis iste natus error sit voluptatem',
-    title: 'Eiusmod tempor incididunt',
-    author: {
-      name: 'Clara Bertoletti',
-      avatar: 'https://assets.maccarianagency.com/avatars/img1.jpg',
-    },
-  },
-  {
-    image: 'https://assets.maccarianagency.com/backgrounds/img24.jpg',
-    description: 'At vero eos et accusamus et iusto odio dignissimos ducimus',
-    title: 'Sed ut perspiciatis',
-    author: {
-      name: 'Jhon Anderson',
-      avatar: 'https://assets.maccarianagency.com/avatars/img2.jpg',
-    },
-    date: '02 Aug',
-  },
-  {
-    image: 'https://assets.maccarianagency.com/backgrounds/img25.jpg',
-    description:
-      'Qui blanditiis praesentium voluptatum deleniti atque corrupti',
-    title: 'Unde omnis iste natus',
-    author: {
-      name: 'Chary Smith',
-      avatar: 'https://assets.maccarianagency.com/avatars/img3.jpg',
-    },
-    date: '05 Mar',
   },
 ];
 
@@ -225,15 +176,6 @@ const Result = () => {
                     justifyContent={'space-between'}
                     alignItems={'center'}
                   >
-                    <Box display={'flex'} alignItems={'center'}>
-                      <Avatar
-                        src={item.author.avatar}
-                        sx={{ marginRight: 1 }}
-                      />
-                      <Typography color={'text.secondary'}>
-                        {item.author.name}
-                      </Typography>
-                    </Box>
                     <Typography color={'text.secondary'}>
                       {item.date}
                     </Typography>

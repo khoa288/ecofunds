@@ -22,7 +22,7 @@ const Topbar = ({ onSidebarOpen, colorInvert = false }) => {
         title="EcoFunds"
         width={{ xs: 100, md: 120 }}
       >
-        <Box component={'img'} src={Hi.src} height={1} width={1} />
+        <Box component={'img'} src={Hi} height={0.3} width={0.3} />
       </Box>
       <Box sx={{ display: { xs: 'none', md: 'flex' } }} alignItems={'center'}>
         <Box>
@@ -53,7 +53,7 @@ const Topbar = ({ onSidebarOpen, colorInvert = false }) => {
             color="primary"
             component="a"
             target="blank"
-            href="https://mui.com/store/items/the-front-landing-page/"
+            href="/"
             size="large"
           >
             Log In
