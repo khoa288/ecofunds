@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
@@ -6,7 +6,30 @@ import { alpha, useTheme } from '@mui/material/styles';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Link } from '@mui/material';
 import Hi from './components/svg/ecofunds.jpg';
+import { connectTheWallet } from 'utilities/phantomWallet';
+import { saveWalletAddress, getWalletAddress } from 'utilities/localStorage';
+
+async function handleConnectWallet(e) {
+  e.preventDefault();
+  const res = await connectTheWallet();
+  if (res.success) {
+    saveWalletAddress(res.addr);
+  }
+
+  window.location.reload();
+}
+
 const Topbar = ({ onSidebarOpen, colorInvert = false }) => {
+  const [walletAddress, setWalletAddress] = useState('');
+
+  useEffect(() => {
+    const addr = getWalletAddress();
+    if (addr) {
+      let addrStr = addr.substr(0, 4) + '...' + addr.substr(addr.length - 4);
+      setWalletAddress(addrStr);
+    }
+  }, []);
+
   const theme = useTheme();
   return (
     <Box
@@ -60,16 +83,28 @@ const Topbar = ({ onSidebarOpen, colorInvert = false }) => {
         </Box>
         <Box marginLeft={4}>
           <Button
+            onClick={(e) => handleConnectWallet(e)}
             variant="contained"
             color="primary"
             component="a"
-            target="blank"
-            href="/LogIn"
             size="large"
           >
-            Log In
+            {walletAddress ? walletAddress : 'Connect Wallet'}
           </Button>
         </Box>
+        {!walletAddress && (
+          <Box marginLeft={4}>
+            <Button
+              variant="contained"
+              color="primary"
+              component="a"
+              href="/LogIn"
+              size="large"
+            >
+              Log In
+            </Button>
+          </Box>
+        )}
       </Box>
       <Box sx={{ display: { xs: 'block', md: 'none' } }} alignItems={'center'}>
         <Button
