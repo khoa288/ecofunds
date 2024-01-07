@@ -1,0 +1,27 @@
+{
+	"name": "EcoPanel",
+	"symbol": "VNECO",
+	"description": "A fraction of the EcoFunds' Solar Panel Installation #1",
+	"seller_fee_basis_points": 100,
+	"image": "https://ipfs.io/ipfs/bafkreie6a33bmmelo4jpc6zrwadpw5mhzttimwupa76d4w4qpmlsltbcl4",
+	"attributes": [
+		{
+			"trait_type": "Location",
+			"value": "Hanoi, Vietnam"
+		}
+	],
+	"properties": {
+		"files": [
+			{
+				"uri": "https://ipfs.io/ipfs/bafkreie6a33bmmelo4jpc6zrwadpw5mhzttimwupa76d4w4qpmlsltbcl4",
+				"type": "image/png"
+			}
+		],
+		"creators": [
+			{
+				"address": "JA6ySU1aLuTzqfGoC1rmpokv7SjMZnrx3Tcg2WfEBh53",
+				"share": 100
+			}
+		]
+	}
+}

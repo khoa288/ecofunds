@@ -65,7 +65,7 @@ const Content = () => {
             alignItems: 'center',
           }}
         >
-          <Typography color={'text.secondary'}>Collection Address</Typography>
+          <Typography color={'text.secondary'}>Collection Address: DXZfy26F4mwogaiwbvSFTS4pnm154SuDi5h7ai5WBBXD</Typography>
         </CardContent>
       </Box>
       <Box paddingY={4}>

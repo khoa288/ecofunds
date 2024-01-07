@@ -57,7 +57,7 @@ const SidebarNewsletter = () => {
                   Enter The Donation
                 </Typography>
                 <TextField
-                  label="0.1 ETH *"
+                  label="0.1 SOL *"
                   variant="outlined"
                   name={'donate'}
                   fullWidth

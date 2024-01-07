@@ -8,12 +8,12 @@ import CardContent from '@mui/material/CardContent';
 
 const mock = [
   {
-    description: 'Owners',
-    title: '333',
+    description: 'SOL Raised',
+    title: '10',
   },
   {
-    description: 'ETH',
-    title: '1',
+    description: 'SOL/cNFT',
+    title: '0.1',
   },
   {
     description: 'NFTs Left',
