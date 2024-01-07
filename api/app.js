@@ -6,6 +6,7 @@ require("dotenv").config();
 require("./config/db");
 
 const authRoutes = require("./controllers/authController");
+const transactionRoutes = require("./controllers/transactionController");
 
 // Port.
 const port = process.env.PORT || 5000;
@@ -32,6 +33,7 @@ app.use(
 
 // Routes.
 app.use("/auth", authRoutes);
+app.use("/transaction", transactionRoutes);
 
 // Default route for unmatched routes
 app.all("*", (req, res) => {
@@ -46,5 +48,5 @@ app.use((err, req, res, next) => {
 
 // Start server.
 app.listen(port, () => {
-    console.log(`Server running on port ${port}`);
+	console.log(`Server running on port ${port}`);
 });
