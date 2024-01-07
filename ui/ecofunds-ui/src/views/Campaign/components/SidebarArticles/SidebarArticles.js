@@ -17,7 +17,7 @@ const mock = [
   },
   {
     description: 'NFTs Left',
-    title: '12',
+    title: '100',
   },
 ];
 

@@ -7,7 +7,7 @@ import Link from '@mui/material/Link';
 const mock = [
   {
     href: '#',
-    title: 'Ecofunds',
+    title: 'EcoFunds',
     isActive: false,
   },
   {

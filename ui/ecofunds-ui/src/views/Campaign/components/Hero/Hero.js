@@ -74,7 +74,7 @@ const Hero = () => {
               marginBottom: 2,
             }}
           >
-            Title
+            Muong Lat Solar Power Project
           </Typography>
         </Box>
       </Container>

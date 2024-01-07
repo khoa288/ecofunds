@@ -15,14 +15,14 @@ import Pic2 from './svg/pic2.jpg';
 const mock = [
   {
     image: Pic1,
-    description: 'Campaign Description',
-    title: 'Campaign Title',
+    description: 'Progress: 0%',
+    title: 'Muong Lat Solar Panel Installation',
     date: '04 Aug',
   },
   {
     image: Pic2,
-    description: 'Campaign Description',
-    title: 'Campaign Title',
+    description: 'Progress: 0%',
+    title: 'Dien Bien Solar Panel Installation',
     date: '12 Sep',
   },
 ];
