@@ -4,11 +4,8 @@
 
 EcoFunds is a revolutionary crowdfunding platform that democratizes access to renewable energy investments through EcoPanel NFTs, leveraging blockchain and cNFT technology on Solana to promote environmental sustainability and transform the lives of underprivileged communities.
 
-## Pitch Deck
-
-https://www.canva.com/design/DAF3FLvCoM0/jrXISOS1OFWOU1ZIYCGEAw/edit?utm_content=DAF3FLvCoM0&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
-
 # Demo Video
+
 https://drive.google.com/file/d/13OBbgY8Te5fJtzpuw5rz7gWFPiykyT5J/view?usp=sharing
 
 ## Solscan (devnet)
