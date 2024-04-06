@@ -8,6 +8,7 @@ import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import { CardContent, Divider } from '@mui/material';
 
 const validationSchema = yup.object({
   donate: yup
@@ -66,6 +67,32 @@ const SidebarNewsletter = () => {
                   error={formik.touched.donate && Boolean(formik.errors.donate)}
                   helperText={formik.touched.donate && formik.errors.donate}
                 />
+                <Box paddingY={2}>
+                  <Divider />
+                </Box>
+                <Box
+                  sx={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    flexWrap: 'wrap',
+                  }}
+                >
+                  <Grid item xs={4}>
+                    <Typography variant="h7">USDT</Typography>
+                  </Grid>
+                  <Grid item xs={8}>
+                    <CardContent sx={{ display: 'flex', alignItems: 'center' }}>
+                      <Typography variant="body1" color="text.secondary">
+                        1000 USDT
+                      </Typography>
+                    </CardContent>
+                  </Grid>
+                </Box>
+                <Grid item xs={8}>
+                  <Typography variant="h7">
+                    <b>Status: Ongoing</b>
+                  </Typography>
+                </Grid>
               </Grid>
               <Grid item container xs={12}>
                 <Button

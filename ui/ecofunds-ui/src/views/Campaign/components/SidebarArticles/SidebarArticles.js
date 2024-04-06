@@ -28,7 +28,7 @@ const SidebarArticles = () => {
         {mock.map((item, i) => (
           <Grid key={i} item xs={12}>
             <CardContent>
-              <Typography variant={'h5'} color={'#177300'}>
+              <Typography variant={'h4'} color={'#177300'}>
                 <b>{item.title}</b>
               </Typography>
               <Box marginY={1 / 4}>
@@ -36,6 +36,7 @@ const SidebarArticles = () => {
                   variant={'caption'}
                   color={'text.primary'}
                   component={'i'}
+                  fontSize={13}
                 >
                   {item.description}
                 </Typography>

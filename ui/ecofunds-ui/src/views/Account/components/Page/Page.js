@@ -16,6 +16,11 @@ const pages = [
     href: '/account-general',
     title: 'General',
   },
+  {
+    id: 'stats',
+    href: '/home',
+    title: 'Contribution Statistic',
+  },
 ];
 
 const Page = ({ children }) => {

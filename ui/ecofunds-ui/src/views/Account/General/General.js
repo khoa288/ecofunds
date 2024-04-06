@@ -214,6 +214,7 @@ const General = () => {
                   fullWidth
                   value={formik.values.walletaddress}
                   onChange={formik.handleChange}
+                  disabled={true}
                   error={
                     formik.touched.bio && Boolean(formik.errors.walletaddress)
                   }
@@ -223,29 +224,7 @@ const General = () => {
               <Grid item xs={12}>
                 <Divider />
               </Grid>
-              <Grid item xs={12}>
-                <Typography
-                  variant={'subtitle2'}
-                  sx={{ marginBottom: 2 }}
-                  fontWeight={700}
-                >
-                  Phone Number
-                </Typography>
-                <TextField
-                  label="Phone number *"
-                  variant="outlined"
-                  name={'address'}
-                  fullWidth
-                  value={formik.values.phonenumber}
-                  onChange={formik.handleChange}
-                  error={
-                    formik.touched.address && Boolean(formik.errors.phonenumber)
-                  }
-                  helperText={
-                    formik.touched.address && formik.errors.phonenumber
-                  }
-                />
-              </Grid>
+
               <Grid item container xs={12}>
                 <Box
                   display="flex"

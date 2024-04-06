@@ -11,6 +11,24 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import Image from '../Hero/svg/1.jpg';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import Paper from '@mui/material/Paper';
+
+function createData(name, amount, time) {
+  return { name, amount, time };
+}
+
+const rows = [
+  createData('Nguyen Minh Khoa', 5, '23:00'),
+  createData('Nguyen Dinh Phong', 4, '10:00'),
+  createData('Bao Ngoc Le', 8, '20:00'),
+];
+
 const Content = () => {
   const theme = useTheme();
 
@@ -97,6 +115,57 @@ const Content = () => {
             </IconButton>
           </Box>
         </Box>
+      </Box>
+      <Box paddingY={3}>
+        <Divider />
+      </Box>
+      <Box
+        component={Card}
+        boxShadow={3}
+        sx={{ backgroundColor: 'white', border: 0 }}
+        paddingX={{ xs: 0, sm: 4, md: 6 }}
+      >
+        <Typography
+          variant="h6"
+          fontWeight={600}
+          align="left"
+          color={'#177300'}
+        >
+          List of Contributors
+        </Typography>
+        <CardContent sx={{ display: 'flex', flexDirection: 'column' }}>
+          <TableContainer component={Paper}>
+            <Table sx={{ minWidth: 650 }} aria-label="simple table">
+              <TableHead>
+                <TableRow>
+                  <TableCell>
+                    <b>Name</b>
+                  </TableCell>
+                  <TableCell align="right">
+                    <b>Contribution&nbsp;(SOL)</b>
+                  </TableCell>
+                  <TableCell align="right">
+                    <b>Time</b>
+                  </TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {rows.map((row) => (
+                  <TableRow
+                    key={row.name}
+                    sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                  >
+                    <TableCell component="th" scope="row">
+                      {row.name}
+                    </TableCell>
+                    <TableCell align="right">{row.amount}</TableCell>
+                    <TableCell align="right">{row.time}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
+        </CardContent>
       </Box>
     </Box>
   );
