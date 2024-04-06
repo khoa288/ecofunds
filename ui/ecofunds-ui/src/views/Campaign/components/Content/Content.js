@@ -97,7 +97,7 @@ const Content = () => {
       >
         <Box display={'flex'} alignItems={'center'}>
           <Box>
-            <Typography fontWeight={600}>Author</Typography>
+            <Typography fontWeight={600}>Date Started</Typography>
             <Typography color={'text.secondary'}>May 19, 2021</Typography>
           </Box>
         </Box>

@@ -3,7 +3,7 @@ import { alpha } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from 'components/Container';
-import Hi from './svg/1.jpg';
+import Hi from '../Hero/svg/1.jpg';
 const Hero = () => {
   useEffect(() => {
     const jarallaxInit = async () => {
@@ -37,19 +37,17 @@ const Hero = () => {
         sx={{
           position: 'absolute',
           objectFit: 'cover',
-          /* support for plugin https://github.com/bfred-it/object-fit-images */
           fontFamily: 'object-fit: cover;',
           top: 0,
           left: 0,
           width: '100%',
-          height: '100%',
+          height: '80%',
           zIndex: -1,
           backgroundRepeat: 'no-repeat',
           backgroundSize: 'cover',
           backgroundPosition: 'center center',
-          backgroundImage: `url(Hi)`,
+          backgroundImage: `url(${Hi})`,
         }}
-        src={Hi}
       />
       <Box
         sx={{
@@ -74,7 +72,7 @@ const Hero = () => {
               marginBottom: 2,
             }}
           >
-            Title
+            Muong Lat
           </Typography>
         </Box>
       </Container>

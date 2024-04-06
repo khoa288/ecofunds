@@ -36,7 +36,7 @@ const SidebarArticles = () => {
                   variant={'caption'}
                   color={'text.primary'}
                   component={'i'}
-                  fontSize={13}
+                  fontSize={17}
                 >
                   {item.description}
                 </Typography>
